@@ -4,15 +4,15 @@ const CanvasXSize = 800;
 const CanvasYSize = 200;
 const speed = 30;
 const scale = 1.05;
-let y = 0;
+const y = 0;
+const dx = 0.75;
+const ctx = document.getElementById('canvas').getContext('2d');
 
-let dx = 0.75;
 let imgW;
 let imgH;
 let x = 0;
 let clearX;
 let clearY;
-let ctx;
 
 img.onload = () => {
   imgW = img.width * scale;
@@ -30,7 +30,6 @@ img.onload = () => {
   } else {
     clearY = CanvasYSize;
   }
-  ctx = document.getElementById('canvas').getContext('2d');
   return setInterval(draw, speed);
 };
 
